@@ -1,9 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".registerActivity">
+    <!-- Scroll View is used to scroll through the page -->
+    <!-- Scroll View can have only one child layout -->
+    <RelativeLayout
+        android:id="@+id/parent_relative"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:id="@+id/child1_linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/heading_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registration Form"
+                android:background="@android:color/holo_green_light"
+                android:textSize="25dp"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
+                />
+            <ImageView
+                android:id="@+id/heading_imageView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/heading"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                />
+        </LinearLayout>
+        <TableLayout
+            android:id="@+id/form_tableLayout"
+            android:layout_below="@id/child1_linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            >
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                >
+                <TextView
+                    android:id="@+id/firstName_textView"
+                    android:text="Enter First Name"
+                    android:textSize="20dp"
+                    android:layout_column="1"
+                    />
+                <EditText
+                    android:id="@+id/firstName_editText"
+                    android:textSize="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_column="2"
+                    android:hint="Enter First Name"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                >
+                <TextView
+                    android:id="@+id/lastName_textView"
+                    android:text="Enter Last Name"
+                    android:textSize="20dp"
+                    android:layout_column="1"
+                    />
+                <EditText
+                    android:id="@+id/lastName_editText"
+                    android:textSize="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_column="2"
+                    android:hint="Enter Last Name"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                >
+                <TextView
+                    android:id="@+id/email_textView"
+                    android:text="Enter Email Name"
+                    android:textSize="20dp"
+                    android:layout_column="1"
+                    />
+                <EditText
+                    android:id="@+id/email_editText"
+                    android:textSize="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_column="2"
+                    android:hint="Enter Email Name"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                >
+                <TextView
+                    android:id="@+id/mobile_textView"
+                    android:text="Enter Mobile Name"
+                    android:textSize="20dp"
+                    android:layout_column="1"
+                    />
+                <EditText
+                    android:id="@+id/mobile_editText"
+                    android:textSize="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_column="2"
+                    android:hint="Enter Mobile Name"
+                    android:maxLength="10"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                >
+                <Button
+                    android:id="@+id/registerSubmit_button"
+                    android:text="Submit"
+                    android:textSize="20dp"
+                    android:layout_column="1"
+                    android:layout_margin="5dp"
+                    />
+                <Button
+                    android:id="@+id/showData_button"
+                    android:text="Display"
+                    android:textSize="20dp"
+                    android:layout_column="1"
+                    android:layout_margin="5dp"
+                    />
+            </TableRow>
+        </TableLayout>
+        <!-- Lists all the data  -->
+        <ListView
+            android:id="@+id/data_listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/form_tableLayout"
+            />
+    </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
